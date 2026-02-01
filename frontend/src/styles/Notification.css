@@ -1,0 +1,42 @@
+/* Notification Styles */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 500;
+    z-index: 1001;
+    animation: slideInRight 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 400px;
+    word-wrap: break-word;
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+.notification.success {
+    background: #2a9d8f;
+}
+
+.notification.error {
+    background: #e76f51;
+}
+
+.notification.warning {
+    background: #f4a261;
+}
+
+.notification.info {
+    background: #2196F3;
+}
+
+.notification i {
+    font-size: 1.2rem;
+}

@@ -1,0 +1,43 @@
+/* Time Slots Styles */
+.time-slots {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    .time-slots {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.time-slot {
+    padding: 12px;
+    text-align: center;
+    background: #f8f9fa;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    color: #343a40;
+}
+
+.time-slot:hover {
+    border-color: #2a9d8f;
+    background: #e8f4f3;
+}
+
+.time-slot.booked {
+    background: #ffeaea;
+    color: #999;
+    cursor: not-allowed;
+    border-color: #ffcccc;
+}
+
+.time-slot.selected {
+    background: #2a9d8f;
+    color: white;
+    border-color: #2a9d8f;
+}
