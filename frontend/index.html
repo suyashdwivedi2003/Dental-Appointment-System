@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dental Clinic Appointment System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-tooth"></i>
+                <h1>Smile Dental Clinic</h1>
+            </div>
+            <nav>
+                <a href="index.html" class="active">Book Appointment</a>
+                <a href="admin.html">Admin Dashboard</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="hero">
+                <h2>Book Your Dental Appointment Online</h2>
+                <p>Fast, secure, and convenient booking system</p>
+            </div>
+
+            <div class="appointment-container">
+                <div class="form-section">
+                    <h3><i class="fas fa-calendar-plus"></i> New Appointment</h3>
+                    
+                    <form id="appointmentForm">
+                        <div class="form-group">
+                            <label for="patientName"><i class="fas fa-user"></i> Full Name</label>
+                            <input type="text" id="patientName" required placeholder="Enter your full name">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="patientEmail"><i class="fas fa-envelope"></i> Email</label>
+                                <input type="email" id="patientEmail" required placeholder="Enter your email">
+                            </div>
+                            <div class="form-group">
+                                <label for="patientPhone"><i class="fas fa-phone"></i> Phone Number</label>
+                                <input type="tel" id="patientPhone" required placeholder="Enter your phone number">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="appointmentDate"><i class="fas fa-calendar-day"></i> Appointment Date</label>
+                                <input type="date" id="appointmentDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="appointmentTime"><i class="fas fa-clock"></i> Preferred Time</label>
+                                <select id="appointmentTime" required>
+                                    <option value="">Select a time</option>
+                                    <option value="09:00">09:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="14:00">02:00 PM</option>
+                                    <option value="15:00">03:00 PM</option>
+                                    <option value="16:00">04:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="serviceType"><i class="fas fa-teeth"></i> Service Required</label>
+                            <select id="serviceType" required>
+                                <option value="">Select a service</option>
+                                <option value="cleaning">Teeth Cleaning</option>
+                                <option value="filling">Dental Filling</option>
+                                <option value="extraction">Tooth Extraction</option>
+                                <option value="root_canal">Root Canal</option>
+                                <option value="braces">Braces Consultation</option>
+                                <option value="whitening">Teeth Whitening</option>
+                                <option value="checkup">Regular Checkup</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notes"><i class="fas fa-notes-medical"></i> Additional Notes</label>
+                            <textarea id="notes" rows="3" placeholder="Any specific concerns or notes..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-paper-plane"></i> Book Appointment
+                        </button>
+                    </form>
+                </div>
+
+                <div class="availability-section">
+                    <h3><i class="fas fa-calendar-check"></i> Today's Availability</h3>
+                    <div class="time-slots" id="timeSlots">
+                        <!-- Time slots will be dynamically loaded here -->
+                    </div>
+                    
+                    <div class="appointment-list">
+                        <h4><i class="fas fa-history"></i> Recent Appointments</h4>
+                        <div id="recentAppointments">
+                            <!-- Recent appointments will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2024 Smile Dental Clinic. All rights reserved.</p>
+            <p>Contact: (555) 123-4567 | info@smiledental.com</p>
+        </footer>
+    </div>
+
+    <!-- Modal for booking confirmation -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3><i class="fas fa-check-circle"></i> Appointment Confirmed!</h3>
+            <div id="confirmationDetails"></div>
+            <button id="printBtn" class="btn-secondary"><i class="fas fa-print"></i> Print Confirmation</button>
+            <button id="newBookingBtn" class="btn-primary"><i class="fas fa-plus"></i> New Booking</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
